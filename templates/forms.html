@@ -1,0 +1,57 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page's title {% endblock %}
+{% block description %} Page's Description {% endblock %}
+{% block keywords %} keyword1, keyword2, keywords {% endblock %}
+
+{% block content %}
+<h1>Forms</h1>
+<hr>
+<div class="row">
+    <div class="col-md-6 col-12">
+        <form action="{{ url_for('forms') }}" method="GET">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <h3>GET request</h3>
+                    <label>Label:</label>
+                    <input type="text" name="data" placeholder="make GET request" value="{{ GetData }}" class="form-control">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </div>
+            </div>
+        </form>
+        <p>Data communicated through get request: </p>
+        <p style="word-break: break-all;">{{ GetData }}</p>
+    </div>
+    
+    <div class="col-md-6 col-12">
+        <form action="{{ url_for('forms') }}" method="POST">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <h3>POST request</h3>
+                    <label>Label:</label>
+                    <input type="text" name="data" placeholder="make POST request" value="{{ PostData }}" class="form-control">
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="col-12">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </div>
+            </div>
+        </form>
+        <p>Data communicated through POST request: </p>
+        <p style="word-break: break-all;">{{ PostData }}</p>
+    </div>
+    
+</div>
+
+    
+
+<div>
+    
+</div>
+
+{% endblock %}
